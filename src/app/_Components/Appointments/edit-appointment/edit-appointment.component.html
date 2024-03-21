@@ -1,0 +1,90 @@
+<div >
+  <h1><b>Smart Covid Online Appointment</b> </h1>
+</div>
+<div class ="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Edit Appointment</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+     
+    </div>
+  </nav>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Appointment_Date</th>
+        <th scope="col">Appointment_Time</th>
+        <th scope ="col">Symptoms</th>
+        <th scope="col">PatientId</th>
+        <th scope="col">ScheduleID</th>
+        
+      </tr>
+      
+    </thead>
+    <tbody>
+      <tr *ngFor="let appointment of appList">
+        <td>{{appointment. appointmentId}}</td>
+        <td>{{appointment.date}}</td>
+        <td>{{appointment.time}}</td>
+        <td>{{appointment.symptoms}}</td>
+        <td>{{appointment.patientId}}</td>
+        <td>{{appointment.scheduleId}}</td>
+        <td>
+            <button type="button" class="btn btn-outline-primary me-2" data-bs-toggle="modal" data-bs-target="#editAppointment" (click)="editAppointment(appointment)">Edit</button>
+        </td>
+        
+    </tr>
+      
+</tbody>
+</table>
+
+<!--Add Appointment Modal-->
+<div class="modal fade" id="editAppointment" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <h1 class="modal-title" id="exampleModalLabel">Edit Appointment</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="appDetail">
+                
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Appointment_Date</label>
+                    <input type="text" formControlName="date" class="form-control" id="date" aria-describedby="emailHelp">
+                  </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Appointment_Time</label>
+                    <input type="text" formControlName="time" class="form-control" id="time" aria-describedby="emailHelp">
+                  </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Symptoms</label>
+                    <input type="text" formControlName="symptoms" class="form-control" id="symptoms" aria-describedby="emailHelp">
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">PatientId</label>
+                    <input type="number" formControlName="patientId" class="form-control" id="patientId" aria-describedby="emailHelp">
+                  </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">ScheduleID</label>
+                    <input type="number" formControlName="scheduleId" class="form-control" id="scheduleId" aria-describedby="emailHelp">
+                  </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="updateAppointment()" >Edit Appointment</button>
+                  </div>
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>

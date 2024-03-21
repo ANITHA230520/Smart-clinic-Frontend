@@ -1,0 +1,15 @@
+th{
+    font-size: x-large;
+    font-family: 'Times New Roman', Times, serif;
+}
+td{
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+}
+h1 {
+    background-color:darkslateblue;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color:blanchedalmond;
+  }

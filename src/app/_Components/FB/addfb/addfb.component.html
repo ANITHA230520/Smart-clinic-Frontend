@@ -1,0 +1,82 @@
+<div >
+    <h1><b>Smart Covid Online Appointment</b> </h1>
+  </div>
+  <div class ="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Smart  Covid Clinic Appointment System</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          
+          
+          <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#addFeedback" type="submit">Add feedback</button>
+        </div>
+      </div>
+    </nav>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ratings</th>
+            <th scope ="col">Comments</th>
+            <th scope="col">DoctorId</th>
+        </tr>
+          
+</thead>
+<tbody>
+    <tbody>
+        <tr *ngFor="let feedback of feeList">
+          <td>{{feedback.rating}}</td>
+          <td>{{feedback.comments}}</td>
+          <td>{{feedback.doctorId}}</td>
+         
+          
+      </tr>
+        
+  </tbody>
+  </table>
+
+  <!--Add Feedback Modal-->
+<div class="modal fade" id="addFeedback" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <h1 class="modal-title" id="exampleModalLabel">Add new Feedback</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="feedDetail">
+                
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Ratings</label>
+                    <input type="text" formControlName="rating" class="form-control" id="rating" aria-describedby="emailHelp">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Comments</label>
+                    <input type="text" formControlName="comments" class="form-control" id="comments" aria-describedby="emailHelp">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">PatientId</label>
+                    <input type="number" formControlName="doctorId" class="form-control" id="doctorId" aria-describedby="emailHelp">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">DoctorId</label>
+                    <input type="number" formControlName="patientId" class="form-control" id="patientId" aria-describedby="emailHelp">
+                  </div>
+
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="addFeedback()" >Add Feedback</button>
+                  </div>
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>
+

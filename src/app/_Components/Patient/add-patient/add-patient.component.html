@@ -1,0 +1,136 @@
+<div >
+  <h1><b>Smart Covid Online Appointment</b> </h1>
+</div>
+<div class ="container-fluid">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Dear Patients, Register your details!!!</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+        
+        <button class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#addPatient" type="submit">Add Patient</button>
+      </div>
+    </div>
+  </nav>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Name</th>
+        <th scope="col">Age</th>
+        <th scope="col">Blood Group</th>
+        <th scope="col">Height</th>
+        <th scope="col">Weight</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Phone No</th>
+        <th scope="col">City</th>
+        <th scope="col">Email</th>
+       
+        <th scope="col">Temperature</th>
+      </tr>
+      
+    </thead>
+    <tbody>
+      <tr *ngFor="let patient of patList">
+        <td>{{patient.patientId}}</td>
+        <td>{{patient.patientName}}</td>
+        <td>{{patient.patientAge}}</td>
+        <td>{{patient.bloodGroup}}</td>
+        <td>{{patient.height}}</td>
+        <td>{{patient.weight}}</td>
+        <td>{{patient.gender}}</td>
+        <td>{{patient.phoneNo}}</td>
+        <td>{{patient.city}}</td>
+        <td>{{patient.email}}</td>
+       
+        <td>{{patient.temperature}}</td>
+    </tr>
+      
+</tbody>
+</table>
+
+<!--Add Patient Modal-->
+<div class="modal fade" id="addPatient" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+
+          <h1 class="modal-title" id="exampleModalLabel">Add new Patient</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="patDetail">
+                
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Name</label>
+                    <input type="text" formControlName="patientName" class="form-control" id="patientName" aria-describedby="emailHelp">
+                  </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Patient Age</label>
+                    <input type="number" formControlName="patientAge" class="form-control" id="patientAge" aria-describedby="emailHelp">
+                  </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Blood Group</label>
+                    <input type="email" formControlName="bloodGroup" class="form-control" id="bloodGroup" aria-describedby="emailHelp">
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Height</label>
+                    <input type="number" formControlName="height" class="form-control" id="height" aria-describedby="emailHelp">
+                  </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Weight</label>
+                    <input type="number" formControlName="weight" class="form-control" id="weight" aria-describedby="emailHelp">
+                  </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Gender</label>
+                    <input type="text" formControlName="gender" class="form-control" id="city" aria-describedby="emailHelp">
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Phone No</label>
+                    <input type="number" formControlName="phoneNo" class="form-control" id="phoneNo" aria-describedby="emailHelp">
+                  </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">City</label>
+                    <input type="text" formControlName="city" class="form-control" id="city" aria-describedby="emailHelp">
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                    <input type="email" formControlName="email" class="form-control" id="email" aria-describedby="emailHelp">
+                  </div>
+                
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Password</label>
+                    <input type="text" formControlName="password" class="form-control" id="password" aria-describedby="emailHelp">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Temperature</label>
+                    <input type="number" formControlName="temperature" class="form-control" id="temperature" aria-describedby="emailHelp">
+                  </div>
+
+                 
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="addPatient()" >Add Patient</button>
+                  </div>
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+  
+ 

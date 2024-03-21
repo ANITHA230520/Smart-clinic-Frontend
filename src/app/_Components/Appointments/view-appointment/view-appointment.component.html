@@ -1,0 +1,41 @@
+<div >
+    <h1><b>Smart Covid Online Appointment</b> </h1>
+  </div>
+  <div class ="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Appointment Details</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+       
+      </div>
+    </nav>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Appointment_Date</th>
+          <th scope="col">Appointment_Time</th>
+          <th scope ="col">Symptoms</th>
+          <th scope="col">PatientId</th>
+          <th scope="col">ScheduleID</th>
+          
+        </tr>
+        
+      </thead>
+      <tbody>
+        <tr *ngFor="let appointment of appList">
+          <td>{{appointment. appointmentId}}</td>
+          <td>{{appointment.date}}</td>
+          <td>{{appointment.time}}</td>
+          <td>{{appointment.symptoms}}</td>
+          <td>{{appointment.patientId}}</td>
+          <td>{{appointment.scheduleId}}</td>
+          
+          
+      </tr>
+        
+  </tbody>
+  </table>
+  

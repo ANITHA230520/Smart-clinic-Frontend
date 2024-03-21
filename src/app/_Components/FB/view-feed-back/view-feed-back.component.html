@@ -1,0 +1,34 @@
+<div >
+    <h1><b>Smart Covid Online Appointment</b> </h1>
+  </div>
+  <div class ="container-fluid">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Smart  Covid Clinic Appointment System</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+      </div>
+    </nav>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ratings</th>
+            <th scope ="col">Comments</th>
+            <th scope="col">DoctorId</th>
+        </tr>
+          
+</thead>
+<tbody>
+    <tbody>
+        <tr *ngFor="let feedback of feeList">
+          <td>{{feedback.rating}}</td>
+          <td>{{feedback.comments}}</td>
+          <td>{{feedback.doctorId}}</td>
+         
+          
+      </tr>
+        
+  </tbody>
+  </table>
